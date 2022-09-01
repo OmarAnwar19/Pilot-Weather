@@ -1,0 +1,44 @@
+.grid {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  min-width: 100%;
+  min-height: 100vh;
+
+  background: #fffdd0;
+}
+
+.bg-cont {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  background-color: #ac7088;
+  box-shadow: 16px 16px 10px #deb6ab;
+  border-radius: 1rem;
+  border: 1px solid black;
+
+  max-width: 50vh;
+  min-height: 50vh;
+}
+
+.text-msg {
+  text-align: center;
+  color: #fff;
+  padding: 50px;
+}
+
+.search {
+  padding-bottom: 1rem;
+}
+
+.weather-cont {
+  background-color: red;
+}
+
+.forecast-cont {
+  background-color: green;
+}
