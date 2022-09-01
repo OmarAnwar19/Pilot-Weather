@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import { TextField, Accordion } from "@mui/material";
+import { TextField } from "@mui/material";
 
 export const SearchBar = styled(TextField)`
   & label.Mui-focused {

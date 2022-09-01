@@ -11,32 +11,35 @@ import ForecastAccordion from "./ForecastAccordion";
 import "../styles/app.css";
 
 const Forecast = ({ data }) => {
-  const index = 0;
+  const genHourlyInfo = (i) => {
+    // prettier-ignore
+    const info = {
+      time: (data["forecast"]["forecastday"][0]["hour"][i]["time"]).split(" ")[1],
+      condition: data["forecast"]["forecastday"][0]["hour"][i]["condition"]["text"],
+      icon: data["forecast"]["forecastday"][0]["hour"][i]["condition"]["icon"],
+      avg_temp: data["forecast"]["forecastday"][0]["hour"][i]["temp_c"],
+    };
 
-  //for each hour in forecastday[0][hour]
-  // prettier-ignore
-  const hourly_info = {
-    time: (data["forecast"]["forecastday"][0]["hour"][index]["time"]).split(" ")[1],
-    icon: data["forecast"]["forecastday"][0]["hour"][index]["condition"]["icon"],
-    temp: data["forecast"]["forecastday"][0]["hour"][index]["temp_c"],
-    humidity: data["forecast"]["forecastday"][0]["hour"][index]["humidity"],
-    precip: data["forecast"]["forecastday"][0]["hour"][index]["precip_mm"],
+    return info;
   };
 
-  // prettier-ignore
-  const info = {
-    date: data["forecast"]["forecastday"][index]["date"],
-    icon: data["forecast"]["forecastday"][index]["day"]["condition"]["icon"],
-    avg_temp: data["forecast"]["forecastday"][index]["day"]["avgtemp_c"],
-    avg_humidity: data["forecast"]["forecastday"][index]["day"]["avghumidity"],
-    total_precip: data["forecast"]["forecastday"][index]["day"]["totalprecip_mm"],
+  const genDailyInfo = (i) => {
+    // prettier-ignore
+    const info = {
+      date: data["forecast"]["forecastday"][i]["date"],
+      condition: data["forecast"]["forecastday"][i]["day"]["condition"]["text"],
+      icon: data["forecast"]["forecastday"][i]["day"]["condition"]["icon"],
+      avg_temp: data["forecast"]["forecastday"][i]["day"]["avgtemp_c"],
+    };
+
+    return info;
   };
 
   return (
     <Box className="forecast-cont">
-      <ForecastAccordion title={"Hourly"} data={hourly_info} />
-      <ForecastAccordion title={"7 Day"} data={info} />
-      <ForecastAccordion title={"14 Day"} data={info} />
+      <ForecastAccordion title={"Hourly"} genInfo={genHourlyInfo} n={24} />
+      <ForecastAccordion title={"7 Day"} genInfo={genDailyInfo} n={7} />
+      <ForecastAccordion title={"14 Day"} genInfo={genDailyInfo} n={14} />
     </Box>
   );
 };
