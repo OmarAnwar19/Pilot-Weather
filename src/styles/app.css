@@ -56,9 +56,8 @@
 }
 
 .c-img {
-  width: 100px;
-  height: 100px;
-  padding: 0 1.5rem;
+  width: 150px;
+  height: 150px;
 }
 
 .forecast-cont {
@@ -81,4 +80,5 @@
   color: #fff !important;
   border-radius: 1rem !important;
   box-shadow: none !important;
+  min-width: 48vh !important;
 }

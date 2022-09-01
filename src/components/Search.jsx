@@ -17,7 +17,7 @@ const Search = ({ city, setCity, handleSubmit }) => {
         <SearchBar
           size="small"
           name="city"
-          label="Enter city name here!"
+          label="Enter city name!"
           value={city}
           onChange={(e) => setCity(e.target.value)}
           InputProps={{

@@ -11,6 +11,7 @@ const Weather = ({ data }) => {
   const info = {
     city: data["location"]["name"],
     icon: data["current"]["condition"]["icon"],
+    condition: data["current"]["condition"]["text"],
     curr_tmp: data["current"]["temp_c"],
     feels_like: data["current"]["feelslike_c"],
     max_temp: data["forecast"]["forecastday"][0]["day"]["maxtemp_c"],
@@ -30,6 +31,9 @@ const Weather = ({ data }) => {
             <Typography variant="h2" component="h2">
               {info.curr_tmp}°c
             </Typography>
+            <Typography variant="h5" component="h2">
+              {info.condition}
+            </Typography>
           </Box>
         </Stack>
 
@@ -43,7 +47,7 @@ const Weather = ({ data }) => {
             <br />
             <b>Humidity:</b> {info.humidity}%
             <br />
-            <b>Precip.:</b> {info.precip}mm
+            <b>Precipitation:</b> {info.precip}mm
             <br />
             <b>Wind Speed:</b> {info.wind_speed}kph
           </Typography>
