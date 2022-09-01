@@ -2,14 +2,10 @@
 import React from "react";
 
 //material ui imports
-import {
-  Accordion,
-  AccordionDetails,
-  AccordionSummary,
-  Box,
-  Typography,
-} from "@mui/material";
-import { ExpandMore as ExpandMoreIcon } from "@mui/icons-material";
+import { Box } from "@mui/material";
+
+//component imports
+import ForecastAccordion from "./ForecastAccordion";
 
 //style imports
 import "../styles/app.css";
@@ -38,50 +34,9 @@ const Forecast = ({ data }) => {
 
   return (
     <Box className="forecast-cont">
-      <Accordion className={"accordion"}>
-        <AccordionSummary
-          expandIcon={<ExpandMoreIcon sx={{ color: "#fff" }} />}
-        >
-          <Typography>Hourly</Typography>
-        </AccordionSummary>
-
-        <AccordionDetails>
-          <Typography>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-            malesuada lacus ex, sit amet blandit leo lobortis eget.
-          </Typography>
-        </AccordionDetails>
-      </Accordion>
-
-      <Accordion className={"accordion"}>
-        <AccordionSummary
-          expandIcon={<ExpandMoreIcon sx={{ color: "#fff" }} />}
-        >
-          <Typography>7 Day</Typography>
-        </AccordionSummary>
-
-        <AccordionDetails>
-          <Typography>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-            malesuada lacus ex, sit amet blandit leo lobortis eget.
-          </Typography>
-        </AccordionDetails>
-      </Accordion>
-
-      <Accordion className={"accordion"}>
-        <AccordionSummary
-          expandIcon={<ExpandMoreIcon sx={{ color: "#fff" }} />}
-        >
-          <Typography>14 Day</Typography>
-        </AccordionSummary>
-
-        <AccordionDetails>
-          <Typography>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-            malesuada lacus ex, sit amet blandit leo lobortis eget.
-          </Typography>
-        </AccordionDetails>
-      </Accordion>
+      <ForecastAccordion title={"Hourly"} data={hourly_info} />
+      <ForecastAccordion title={"7 Day"} data={info} />
+      <ForecastAccordion title={"14 Day"} data={info} />
     </Box>
   );
 };
