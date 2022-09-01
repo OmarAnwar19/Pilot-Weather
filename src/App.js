@@ -11,7 +11,7 @@ import { Box, Grid, Typography } from "@mui/material";
 import baseURL from "./api/keys";
 
 //component imports
-import CurrentWeather from "./components/CurrentWeather";
+import Weather from "./components/Weather";
 import Forecast from "./components/Forecast";
 import Search from "./components/Search";
 
@@ -44,8 +44,8 @@ const App = () => {
                 </Typography>
               ) : (
                 <>
-                  <CurrentWeather />
-                  <Forecast />
+                  <Weather data={data} />
+                  <Forecast data={data} />
                 </>
               )}
             </Box>

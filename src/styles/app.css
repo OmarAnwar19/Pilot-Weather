@@ -16,10 +16,9 @@
   justify-content: center;
   align-items: center;
 
-  background-color: #ac7088;
+  background-color: #ecccb2;
   box-shadow: 16px 16px 10px #deb6ab;
   border-radius: 1rem;
-  border: 1px solid black;
 
   max-width: 50vh;
   min-height: 50vh;
@@ -28,7 +27,7 @@
 .text-msg {
   text-align: center;
   color: #fff;
-  padding: 50px;
+  padding: 3.12rem;
 }
 
 .search {
@@ -36,9 +35,50 @@
 }
 
 .weather-cont {
-  background-color: red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: #ac7088;
+  color: #fff;
+
+  max-width: 50vh;
+  min-height: 25vh;
+  margin: 0.5rem;
+
+  border-radius: 1rem;
+}
+
+.weather-cont h2 {
+  text-align: center;
+  padding: 0.5rem 2rem;
+  color: #fff;
+}
+
+.c-img {
+  width: 100px;
+  height: 100px;
+  padding: 0 1.5rem;
 }
 
 .forecast-cont {
-  background-color: green;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  background-color: #927883;
+  color: #fff;
+
+  max-width: 50vh;
+  margin: 0.5rem;
+  padding: 1rem 0rem;
+
+  border-radius: 1rem;
+}
+
+.accordion {
+  background-color: #927883;
+  border-radius: 1.5rem;
+  color: #fff;
 }
