@@ -12,9 +12,3 @@ export const SearchBar = styled(TextField)`
     }
   }
 `;
-
-export const ForecastAcc = styled(Accordion)`
-  background-color: #927883;
-  border-radius: 1.5rem;
-  color: #fff;
-`;

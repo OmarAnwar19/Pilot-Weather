@@ -11,8 +11,6 @@ import {
 } from "@mui/material";
 import { ExpandMore as ExpandMoreIcon } from "@mui/icons-material";
 
-import { ForecastAcc } from "../styles/theme";
-
 //style imports
 import "../styles/app.css";
 
@@ -40,8 +38,10 @@ const Forecast = ({ data }) => {
 
   return (
     <Box className="forecast-cont">
-      <ForecastAcc>
-        <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+      <Accordion className={"accordion"}>
+        <AccordionSummary
+          expandIcon={<ExpandMoreIcon sx={{ color: "#fff" }} />}
+        >
           <Typography>Hourly</Typography>
         </AccordionSummary>
 
@@ -51,10 +51,12 @@ const Forecast = ({ data }) => {
             malesuada lacus ex, sit amet blandit leo lobortis eget.
           </Typography>
         </AccordionDetails>
-      </ForecastAcc>
+      </Accordion>
 
-      <Accordion>
-        <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+      <Accordion className={"accordion"}>
+        <AccordionSummary
+          expandIcon={<ExpandMoreIcon sx={{ color: "#fff" }} />}
+        >
           <Typography>7 Day</Typography>
         </AccordionSummary>
 
@@ -66,8 +68,10 @@ const Forecast = ({ data }) => {
         </AccordionDetails>
       </Accordion>
 
-      <Accordion>
-        <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+      <Accordion className={"accordion"}>
+        <AccordionSummary
+          expandIcon={<ExpandMoreIcon sx={{ color: "#fff" }} />}
+        >
           <Typography>14 Day</Typography>
         </AccordionSummary>
 
