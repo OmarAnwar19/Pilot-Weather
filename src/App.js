@@ -7,9 +7,6 @@ import React, { useState } from "react";
 //material-ui imports
 import { Box, Grid, Typography } from "@mui/material";
 
-//import keys for fetching data from api
-import baseURL from "./api/keys";
-
 //component imports
 import Weather from "./components/Weather";
 import Forecast from "./components/Forecast";
@@ -17,6 +14,9 @@ import Search from "./components/Search";
 
 //style imports
 import "./styles/app.css";
+
+//key imports
+import { BASE_URL } from "./api/keys";
 
 const App = () => {
   const [city, setCity] = useState("");
@@ -26,9 +26,11 @@ const App = () => {
     e.preventDefault();
 
     await axios
-      .get(`${baseURL}&q=${city}`)
+      .get(`${BASE_URL}&q=${city}`)
       .then((res) => setData(res.data))
       .catch((err) => setData({ message: err["message"] }));
+
+    console.log(`${BASE_URL}&q=${city}`);
   };
 
   return (
